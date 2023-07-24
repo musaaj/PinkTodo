@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat:wght@100;800&family=Roboto&display=swap');
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+:root{
+	--bg-primary: #ffffff;
+	--text-primary: #101021;
+	--bg-svg: #fefefe;
+	--gr-1: rgba(250, 250, 250, 1);
+	--gr-0: rgba(255, 255, 255, 1);
+	font-family: Courgette, Roboto, Montserrat;
+}
+
+@media screen and (prefers-color-scheme: dark){
+	:root {
+		--bg-primary: #080404;
+		--text-primary: #efefef;
+		--bg-svg: #fefefe;
+		--gr-1: rgba(10, 10, 10, 1);
+		--gr-0: rgba(5, 5, 5, 1);
+	}
+}
+
+:root[data-theme="dark"]{
+	--bg-primary: #080404;
+	--text-primary: #efefef;
+	--bg-svg: #fefefe;
+	--gr-1: rgba(10, 10, 10, 1);
+	--gr-0: rgba(5, 5, 5, 1);
+}
+
+body{
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+}
+
+svg {
+	fill: var(--bg-svg);
+}
+@layer components {
+	.btn-circle {
+		@apply w-12 h-12 text-4xl rounded-full;
+	}
+	.bg-gradient {
+		background: var(--gr-1);
+		background: linear-gradient(180deg, var(--gr-1) 0%, var(--gr-0) 50%, var(--gr-1) 100%);
+	}
+}
